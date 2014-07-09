@@ -20,3 +20,5 @@ standardization, as a generalized issue among all kind of legal documents, based
 ways of writing citations.
 
 More info and full paper: http://www.researchgate.net/publication/260408580_Reference_identification_in_Greek_law_texts_with_use_of_regular_expressions
+
+The folder web-page-tester contains PHP files that were used to test various hypothesis for Greek references
