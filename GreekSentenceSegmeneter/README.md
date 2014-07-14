@@ -3,7 +3,7 @@ Greek sentence segmenter
 
 A much better sentence segmeneter to use in NLTK, than the one provided, for the Greek Language.
 
-It has been constructed on law texts (e-Themis), which is full of full stops (due to Acronyms) and other punctuation marks
+It has been constructed on law texts (e-Themis), which is full of full stops (due to Acronyms) and other punctuation marks. Due to memory constraints, I wasn't able to feed the whole e-Themis database, but at least a big portion of it, ~70%.
 
 To use it, open it and unpickle it. For example:
 
