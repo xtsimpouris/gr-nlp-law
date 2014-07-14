@@ -16,47 +16,47 @@ To use it, open it and unpickle it. For example:
 
 Sentence segmenter was built on the PunktSentenceTokenizer of NLTK with the following code, where "keys" are the e-Themis files.
 
-        def create_sentence_tokenizer(files_to_read = -1, ascii = False, tok_file = 'greek.law.pickle'):
-            """
-                Diabazei ola ta arxeia kai dimiourgei sentence tokenizer
-                H prwti parametros deixnei posa arxeia na diabasei
-            """
+    def create_sentence_tokenizer(files_to_read = -1, ascii = False, tok_file = 'greek.law.pickle'):
+        """
+            Diabazei ola ta arxeia kai dimiourgei sentence tokenizer
+            H prwti parametros deixnei posa arxeia na diabasei
+        """
+    
+        import pickle, nltk
         
-            import pickle, nltk
-            
-            if files_to_read > len(keys):
-                files_to_read = len(keys)
-                print 'files_to_read trancated to %d' % files_to_read
-            elif files_to_read < 0:
-                files_to_read = 2 * int(len(keys)) / 3
-                print 'files_to_read auto set to %d * 2/3 => %d' % (len(keys), files_to_read)
-            
-            print 'Reading all %d files..' % files_to_read,
-            i = 0
-            all_data = ""
-            
-            for cfile in keys:
-                i += 1
-                if i > files_to_read:
-                    break
-                
-                print '[%s]' % cfile,
-                all_data += my_io.read_file(txt(cfile, ascii))
-                        
-            print '..Done!'
-            
-            print 'Creating .. nltk.tokenize.punkt.PunktSentenceTokenizer()',
-            tokenizer = nltk.tokenize.punkt.PunktSentenceTokenizer()
-            tokenizer.train(all_data)    
-            print '..Done!'
+        if files_to_read > len(keys):
+            files_to_read = len(keys)
+            print 'files_to_read trancated to %d' % files_to_read
+        elif files_to_read < 0:
+            files_to_read = 2 * int(len(keys)) / 3
+            print 'files_to_read auto set to %d * 2/3 => %d' % (len(keys), files_to_read)
         
-            print 'Dumping to hd..',
-            out = open(tok_file,"wb")
-            pickle.dump(tokenizer, out)
-            out.close()
-            print '..Done!'
+        print 'Reading all %d files..' % files_to_read,
+        i = 0
+        all_data = ""
+        
+        for cfile in keys:
+            i += 1
+            if i > files_to_read:
+                break
             
-            return tokenizer
+            print '[%s]' % cfile,
+            all_data += my_io.read_file(txt(cfile, ascii))
+                    
+        print '..Done!'
+        
+        print 'Creating .. nltk.tokenize.punkt.PunktSentenceTokenizer()',
+        tokenizer = nltk.tokenize.punkt.PunktSentenceTokenizer()
+        tokenizer.train(all_data)    
+        print '..Done!'
+    
+        print 'Dumping to hd..',
+        out = open(tok_file,"wb")
+        pickle.dump(tokenizer, out)
+        out.close()
+        print '..Done!'
+        
+        return tokenizer
         
 
 
