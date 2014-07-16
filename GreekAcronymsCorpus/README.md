@@ -1,7 +1,7 @@
 Greek acronyms corpus
 ==================
 
-This corpus was constructed to identify acronyms in Greek Language, on which the following paper was peer-reviewered and published.
+This corpus was constructed to identify acronyms in Greek Language, on which the following paper was peer-reviewed and published.
 
 Acronym identification in Greek legal texts, Literary and Linguist Computing (2014) doi: 10.1093/llc/fqu009
 
